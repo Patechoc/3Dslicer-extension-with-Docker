@@ -39,3 +39,32 @@ exit
 
 ### Package your variant
 
+## Setting up your own Automation-driven development
+
+- Create a new repository on GitHub. To avoid errors, do not initialize the new repository with README, license, or gitignore files. You can add these files after your project has been pushed to GitHub.
+- Clone this repository and push it to your own Github/Bitbucket account.
+
+```shell
+$ git clone https://github.com/Patechoc/3Dslicer-extension-with-Docker.git
+$ cd 3Dslicer-extension-with-Docker
+```
+
+- At the top of your GitHub repository's Quick Setup page, click to copy the remote repository URL.
+- In Terminal, add the URL for the remote repository (<remote repository URL>, e.g. https://github.com/Patechoc/myNewSlicerExtension.git) where your local repository will be pushed.
+
+```shell
+$ git remote rm origin
+$ git remote add origin <remote repository URL>
+```
+
+- Push the changes (or simply this clone untouched) from your local repository to GitHub.
+
+```shell
+$ git push origin master
+```
+
+- Sign up/Log in to your [Wercker account](https://app.wercker.com/)
+- Register your Github account in the Settings if not already done
+- Create a new application and follow the steps (Select a repository, ...) until you clicked on "Finish"
+- In your new application, change the Wercker version to 5 ("Ewok"). In "Settings" > "Infrastructure stack", select "Infra Stack 5"/"Ewok". This allows Wercker to pull Docker images.
+- You are done! Now every time you will "push" to your Github repo, Wercker will test your code following the steps detailled in wercker.yml
