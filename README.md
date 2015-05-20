@@ -7,7 +7,7 @@ This is a demo to run, test, build extensions and package your own variant of 3D
 - This image is pulled and we can run it or extend it locally within Docker.
 - On top of that, [Wercker](http://wercker.com/) allows us to automate the test and deployement for every single 'push' made to this repository.
 
-While Docker guarantees reliability and reproducibility without waiting for most of the dependencies and the code source to compile, Wercker alows continous delivery of your applications, by testing and reporting on every single modification your push to the repository (and [even locally](http://blog.wercker.com/2015/05/15/Introducing-local-development.html)... hot topic!).
+While Docker guarantees reliability and reproducibility without waiting for most of the dependencies to be installed and the code source to compile, Wercker allows continuous delivery of your applications, by testing and reporting for every single push to the repository (and [even locally after any file modification saved](http://blog.wercker.com/2015/05/15/Introducing-local-development.html)... hot topic!).
 
 ## Getting started
 
@@ -24,16 +24,14 @@ and run the image (as an interactive Docker container), which is like entering a
 ```shell
 $ sudo docker run -t -i patrickmerlot/3dslicer-docker-image /bin/bash
 ...
-bash-4.1# ls
+$ bash-4.2# ls
 ...
-bash-4.1# /myProject/Slicer/Slicer-SuperBuild-Debug/Slicer
+$ bash-4.2# /myProject/Slicer/Slicer-SuperBuild-Debug/Slicer
 ...
-exit
+$ exit
 ```
 
 ### Test 3Dslicer
-
-### Modify/Extend 3Dslicer
 
 ### Modify/Extend 3Dslicer
 

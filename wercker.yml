@@ -1,0 +1,31 @@
+box: ubuntu:14.04
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+        name: Ubuntu version
+        code: |
+          echo "hello Ubuntu"
+          lsb_release -a
+
+    # update Ubuntu
+    - script:
+        name: update Ubuntu
+        code: |
+          apt-get update
+
+    # install dependencies
+    - script:
+        name: install dependencies
+        code: |
+          apt-get install -y subversion
+
+    # checkout 3DSlicer
+    - script:
+        name: checkout 3DSlicer (svn)
+        code: |
+          chmod +x ./base_Build_Slicer3/checkout.sh
+          ./base_Build_Slicer3/checkout.sh
