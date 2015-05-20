@@ -27,5 +27,5 @@ build:
     - script:
         name: checkout 3DSlicer (svn)
         code: |
-          chmod +x ./base_Build_Slicer3/checkout.sh
-          ./base_Build_Slicer3/checkout.sh
+          chmod +x ./checkout.sh
+          ./checkout.sh
